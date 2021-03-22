@@ -5,6 +5,7 @@ const {execSync} = require('child_process');
 const { sep, dirname } = require('path');
 const recursive = require('recursive-readdir');
 const difference = require('array-difference')
+const xml2js = require('xml2js');
 
 async function createDif(index) {
   const previousVersion = index >= 1 ? JSON.parse(await readFile(`${process.cwd()}/joomla_beta${index}.json`, {encoding: 'utf8'})) : [];
@@ -21,6 +22,14 @@ async function createDif(index) {
   });
 
   await writeFile(`${process.cwd()}/diff_beta_${index === 0 ? '_' : index}_${index+1}.json`, JSON.stringify(diff, '', 2), {encoding: 'utf8'});
+
+  const builder = new xml2js.Builder();
+  const files = [];
+  diff.map(el => files.push({filename: el}))
+  // const xmlString = xml([ { files: files }], { declaration: { standalone: 'yes'}}, true)
+  const xmlString = builder.buildObject({ files: files })
+
+  await writeFile(`${process.cwd()}/diff_beta_${index === 0 ? '_' : index}_${index+1}.xml`, xmlString, {encoding: 'utf8'});
 }
 
 function checkFile(file, currentVersionFiles, redundantFiles, redundantFolders) {
