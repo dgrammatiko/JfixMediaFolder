@@ -13,7 +13,14 @@ async function createDif(index) {
   const a = previousVersion.sort().map(file => file.replace(`${process.cwd()}/joomla_beta${index}${sep}`, ''));
   const b = currentVersion.sort().map(file => file.replace(`${process.cwd()}/joomla_beta${index + 1}${sep}`, ''));
 
-  await writeFile(`${process.cwd()}/diff_beta_${index === 0 ? '_' : index}_${index+1}.json`, JSON.stringify(difference(a, b), '', 2), {encoding: 'utf8'});
+  const diff = [];
+  a.forEach(el => {
+    if (!b.includes(el)) {
+      diff.push(el);
+    }
+  });
+
+  await writeFile(`${process.cwd()}/diff_beta_${index === 0 ? '_' : index}_${index+1}.json`, JSON.stringify(diff, '', 2), {encoding: 'utf8'});
 }
 
 function checkFile(file, currentVersionFiles, redundantFiles, redundantFolders) {

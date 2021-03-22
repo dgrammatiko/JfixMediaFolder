@@ -2,13 +2,5 @@
   "administrator/templates/atum/images/logo-blue.svg",
   "administrator/templates/atum/images/logo-joomla-blue.svg",
   "administrator/templates/atum/images/logo-joomla-white.svg",
-  "administrator/templates/atum/images/logo.svg",
-  "administrator/components/com_admin/forms/profile.xml",
-  "administrator/components/com_admin/src/Controller/ProfileController.php",
-  "administrator/components/com_admin/src/Model/ProfileModel.php",
-  "administrator/components/com_admin/src/View/Profile/HtmlView.php",
-  "administrator/components/com_admin/tmpl/profile/edit.php",
-  "administrator/templates/atum/images/logos/brand-large.svg",
-  "administrator/templates/atum/images/logos/brand-small.svg",
-  "administrator/templates/atum/images/logos/login.svg"
+  "administrator/templates/atum/images/logo.svg"
 ]
