@@ -1,0 +1,34 @@
+{
+  "name": "jfixmediafolder",
+  "version": "0.0.0",
+  "description": "Nothing to see here, move on",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dgrammatiko/JfixMediaFolder.git"
+  },
+  "author": "Dimitris Grammatikogiannis <d.grammatiko@gmail.com> (https://dgrammatiko.online/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dgrammatiko/JfixMediaFolder/issues"
+  },
+  "homepage": "https://github.com/dgrammatiko/JfixMediaFolder#readme",
+  "dependencies": {
+    "@octokit/rest": "^18.3.4",
+    "fs-extra": "^9.1.0",
+    "git-tags": "^0.2.4",
+    "github": "^14.0.0",
+    "github-api-tags-full": "^7.1.0",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "adm-zip": "^0.5.4",
+    "array-difference": "0.0.2",
+    "fstream": "^1.0.12",
+    "recursive-readdir": "^2.2.2",
+    "unzip": "^0.1.11"
+  }
+}
